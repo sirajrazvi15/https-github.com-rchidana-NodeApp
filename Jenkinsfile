@@ -20,7 +20,7 @@ node {
         }
     }
 
-    stage('Push image') 
+	stage('Push image') {
 	docker push  balajikendey/jenkins:latest
     }
 }
