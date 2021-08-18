@@ -24,7 +24,9 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('https://hub.docker.com/u/balajikendey', 'docker-hub') {
+        docker.withRegistry("https://gcr.io", "gcr:google-container-registry") {
+  sh "docker push [balaji97/nodeapp]"
+	} {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             } 
